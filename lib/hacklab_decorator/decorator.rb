@@ -3,8 +3,17 @@ module HacklabDecorator
   class Decorator
     attr_accessor :object
 
+    def self.object_class=(val)
+      @object_class = val
+    end
+
+    def self.object_class
+      @object_class
+    end
+
     def initialize(object)
       @object = object
+      self.class.object_class = object.class
     end
 
     def h
@@ -22,6 +31,10 @@ module HacklabDecorator
           end
 
         end
+      end
+      def method_missing(method, *args, &block)
+        return super unless @object.respond_to?(method)
+        object_class.send(method, *args, &block)
       end
     end
 
