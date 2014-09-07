@@ -32,6 +32,7 @@ module HacklabDecorator
 
         end
       end
+
       def method_missing(method, *args, &block)
         return super unless @object.respond_to?(method)
         object_class.send(method, *args, &block)
