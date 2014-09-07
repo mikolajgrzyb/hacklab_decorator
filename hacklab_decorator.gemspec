@@ -3,9 +3,9 @@ $:.push File.expand_path("../lib", __FILE__)
 require "hacklab_decorator/version"
 
 Gem::Specification.new do |s|
-  s.name = 'hacklab_decorator'
+  s.name = 'hacklab_decorator_lol'
   s.version = HacklabDecorator::VERSION
-  s.authors = %w(Michał\ Samluk)
+  s.authors = %w(Mikołaj\ Grzyb)
   s.summary = 'Gem created on hacklab.'
   s.license = "MIT"
 
@@ -15,6 +15,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.homepage    = "https://github.com/michal-samluk/hacklab_decorator"
 
+  s.add_dependency 'request_store'
   s.add_development_dependency 'rake', '>= 0.9.2'
   s.add_development_dependency 'rspec', '~> 3.0.0'
   s.add_development_dependency 'rspec-mocks', '~> 3.0.0'
